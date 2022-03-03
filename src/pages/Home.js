@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import Header from '../components/header/Header';
 import UserDetails from '../components/userdetails/UserDetails';
 import IdeaList from '../components/ideas/IdeaList';
+import Ideas from '../components/ideas/Ideas';
 import { UserContext } from '../context/UserContext';
 
 export default function Home() {
@@ -12,7 +13,8 @@ export default function Home() {
   return (
     <div>
       <Header />
-      {context.user ? <IdeaList /> : <UserDetails />}
+      {/* {context.user ? <Ideas /> : <UserDetails />} */}
+      <Ideas />
     </div>
   );
 }

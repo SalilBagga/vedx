@@ -33,6 +33,9 @@ module.exports = {
           900: 'hsla(190, 81%, 20%, 1)',
         },
         'gray-darker': '#504747',
+        'light-green': '#4DD637',
+        yellow: '#E8BD0D',
+        blue: '#1B98F5',
       },
       spacing: {
         7.5: '1.875rem', // 30px
