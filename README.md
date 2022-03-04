@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Hi welcome to the repository
+
+![alt text](./src/assets/1.PNG)
+
+## Below instruction are how to install React App and work around it
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

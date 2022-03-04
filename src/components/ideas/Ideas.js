@@ -16,19 +16,19 @@ export default function Ideas() {
     function filter(temp) {
       if (option === 'old') {
         setDisplayIdea(temp);
-        console.log('old working');
+        // console.log('old working');
       } else if (option === 'new') {
         temp = temp.reverse();
         setDisplayIdea(temp);
-        console.log('new working');
+        // console.log('new working');
       } else if (option === 'most') {
         temp = temp.sort((a, b) => (a.likes.length > b.likes.length ? 1 : -1));
         setDisplayIdea(temp);
-        console.log('most working');
+        // console.log('most working');
       } else if (option === 'least') {
         temp = temp.sort((a, b) => (a.likes.length < b.likes.length ? 1 : -1));
         setDisplayIdea(temp);
-        console.log('least working');
+        // console.log('least working');
       }
     }
     return filter(temp);

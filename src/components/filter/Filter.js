@@ -20,7 +20,6 @@ export default function Filter({ displayIdea, setDisplayIdea, option, setOption 
             id="sort_likes"
             onChange={(e) => {
               setOption(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value="" defaultValue>
