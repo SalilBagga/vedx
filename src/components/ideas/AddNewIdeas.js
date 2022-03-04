@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 
 import { UserContext } from '../../context/UserContext';
-export default function AddNewIdeas() {
+const AddNewIdeas = () => {
   const context = useContext(UserContext);
 
   const [tags, setTags] = useState([]);
@@ -23,13 +23,17 @@ export default function AddNewIdeas() {
     e.preventDefault();
     let titletemp = title.trim();
     let descriptiontemp = description.trim();
-
+    let newdate = new Date();
+    let date = newdate.toLocaleString();
+    let by = context.user;
     if (titletemp && descriptiontemp) {
       let obj = {
         title: titletemp,
         description: descriptiontemp,
         tags: tags,
         likes: [],
+        date: date,
+        by: by,
       };
       context.setIdeas((prevideas) => [...prevideas, obj]);
       setTitle('');
@@ -104,4 +108,5 @@ export default function AddNewIdeas() {
       )}
     </div>
   );
-}
+};
+export default React.memo(AddNewIdeas);

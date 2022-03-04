@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { UserContext } from '../../context/UserContext';
 
@@ -6,7 +6,7 @@ import { UserContext } from '../../context/UserContext';
 import Fill from '../../assets/fill.png';
 import Empty from '../../assets/empty.png';
 
-export default function IdeaList() {
+export default function IdeaList({ displayIdea, setDisplayIdea }) {
   const context = useContext(UserContext);
 
   const handleLikeClick = (index) => {
@@ -20,10 +20,14 @@ export default function IdeaList() {
     context.ideas[index] = obj;
     context.setIdeas([...context.ideas]);
   };
+  useEffect(() => {
+    setDisplayIdea(context.ideas);
+  }, [context.ideas, setDisplayIdea]);
+
   return (
     <div className="w-[60vw] mx-auto ">
-      {context.ideas &&
-        context.ideas.map((data, index) => (
+      {displayIdea &&
+        displayIdea.map((data, index) => (
           <div
             key={index}
             className="w-[55vw] min-h-[30vh] border-2  m-4 rounded-md odd:bg-blue even:bg-yellow odd:border-blue even:border-yellow odd:text-blue even:text-yellow p-4 relative shadow-xl"
@@ -53,6 +57,11 @@ export default function IdeaList() {
                 <img src={data.likes.includes(context.user) ? Fill : Empty} alt="likes" />
               </div>
               <span className=" text-white">{data.likes.length}</span>
+            </div>
+            <div className="absolute text-white bottom-0 right-6 text-right">
+              <span>by {data.by}</span>
+              <br />
+              <span>{data.date.toLocaleString()}</span>
             </div>
           </div>
         ))}

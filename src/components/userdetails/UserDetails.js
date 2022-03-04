@@ -8,7 +8,6 @@ export default function UserDetails() {
 
   const handleLogin = () => {
     let temp = userName;
-
     if (temp) {
       temp = temp.trim();
       context.setUser(temp);
