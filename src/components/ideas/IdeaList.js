@@ -8,7 +8,7 @@ import Empty from '../../assets/empty.png';
 
 export default function IdeaList() {
   const context = useContext(UserContext);
-  console.log(context.ideas);
+
   const handleLikeClick = (index) => {
     let obj = context.ideas[index];
     if (!obj.likes.includes(context.user)) {

@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 function Header() {
   const context = useContext(UserContext);
-  console.log(context.user);
+
   return (
     <div className="w-full h-15 border-b-1 bg-light-green mb-4 ">
       <div className="flex  pt-2 justify-around items-center">
@@ -30,4 +30,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);
